@@ -4,49 +4,69 @@
     <title>My App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="app.min.css">
-    <style>
-      /* TODO */
-    </style>
-  </head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-  <body>
+<body>
+
     <div class="app-page" data-page="home">
-      <div class="app-topbar">
-        <div class="app-title">Home page</div>
-      </div>
-      <div class="app-content">
-        <div class="app-section">
-          <div class="app-button" data-target="page2">Go to Page 2</div>
+
+        <div class="app-topbar">
+            <div class="app-title">Home page</div>
         </div>
-      </div>
+
+        <div class="app-content">
+
+            <p class="app-section">This is some randome text</p>
+
+            <div class="app-section">
+                <b>Topbar colours:</b><br>
+                <ul class="colour-picker">
+                    <li data-colour="teal"></li>
+                    <li data-colour="green"></li>
+                    <li data-colour="yellow"></li>
+                    <li data-colour="orange"></li>
+                    <li data-colour="red"></li>
+                    <li data-colour="blue"></li>
+                    <li data-colour="dark-blue"></li>
+                    <li data-colour="white"></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+
+            <div class="app-section">
+                <div class="app-button" data-target="page2">Go to Page 2</div>
+            </div>
+
+        </div>
     </div>
 
     <div class="app-page" data-page="page2">
-      <div class="app-topbar">
-        <div class="app-button left" data-back data-autotitle></div>
-        <div class="app-title">Page 2</div>
-      </div>
-      <div class="app-content">
-        Page 2 is lonely
-      </div>
+        <div class="app-topbar">
+            <div class="app-button left" data-back data-autotitle></div>
+            <div class="app-title">Page 2</div>
+        </div>
+        <div class="app-content">
+            Page 2 is lonely
+        </div>
     </div>
 
     <script src="zepto.js"></script>
     <script src="app.min.js"></script>
     <script>
-      App.controller('home', function (page) {
-        // put stuff here
-      });
+        App.controller('home', function(page) {
+            // put stuff here
+        });
 
-      App.controller('page2', function (page) {
-        // put stuff here
-      });
+        App.controller('page2', function(page) {
+            // put stuff here
+        });
 
-      try {
-        App.restore();
-      } catch (err) {
-        App.load('home');
-      }
+        try {
+            App.restore();
+        } catch (err) {
+            App.load('home');
+        }
     </script>
-  </body>
+</body>
 </html>
