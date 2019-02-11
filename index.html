@@ -54,12 +54,23 @@
     <script src="zepto.js"></script>
     <script src="app.min.js"></script>
     <script>
+        function setupPageColor(page) {
+
+            $(page).find('ui.color-picker li')
+                .clickable()
+                .on('click', function() {
+                    var color = $(this).data('color');
+                    alert('color');
+                })
+
+        }
+
         App.controller('home', function(page) {
-            // put stuff here
+            setupPageColor(page);
         });
 
         App.controller('page2', function(page) {
-            // put stuff here
+            setupPageColor(page);
         });
 
         try {
